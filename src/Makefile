@@ -53,6 +53,9 @@ libjnizengarden: ../libs/$(OS)/libjnizengarden.$(JNI_EXTENSION)
 
 libzengarden: ../libs/$(OS)/libzengarden.$(SO_EXTENSION)
 
+install: libzengarden
+	sudo cp -f ../libs/$(OS)/libzengarden.$(SO_EXTENSION) /usr/lib/
+
 ../libs/$(OS)/libzengarden.$(SO_EXTENSION): $(OBJS)
 	$(call MAKE_SO, $@, , $(OBJS))
 
